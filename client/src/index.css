@@ -118,15 +118,18 @@
     background-position: center;
     background-attachment: fixed;
   }
-  
+}
+
+@layer components {
   .glass-card {
     @apply bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] rounded-2xl;
   }
 
-.dark .glass-card {
-  @apply bg-black/40 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
-}
+  .dark .glass-card {
+    @apply bg-black/40 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600;
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600;
+  }
 }
