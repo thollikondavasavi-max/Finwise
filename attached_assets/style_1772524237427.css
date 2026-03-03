@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f0ff; /* lavender */
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #c5b4e3;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-weight: 500;
+    color: #2d2d2d;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+}
+
+/* Sections */
+section {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+h2 {
+    font-weight: 500;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.card {
+    flex: 1 1 180px;
+    background: #fafafa;
+    padding: 25px 15px;
+    border-radius: 18px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+    text-align: center;
+    transition: all 0.25s;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #3b3b3b;
+}
+
+.card p {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin: 5px 0 0;
+    color: #1f1f1f;
+}
+
+.balance { background: #a7c7e7; }
+.income { background: #b5ead7; }
+.expenses { background: #f8c8dc; }
+
+/* Form */
+.transaction-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, select, button {
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    background: white;
+    transition: all 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #a7c7e7;
+    box-shadow: 0 0 0 3px rgba(167,199,231,0.2);
+}
+
+button {
+    background-color: #e8cfc1;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    color: #2d2d2d;
+}
+
+button:hover {
+    background-color: #d1b9a8;
+    transform: scale(1.02);
+}
+
+/* Charts */
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.chart-container {
+    flex: 1 1 300px;
+    max-width: 400px;
+    text-align: center;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 250px;
+    background: #fafafa;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.chart-label {
+    margin-top: 8px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* History controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.sort, .search, .export {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sort select {
+    padding: 8px 15px;
+    border-radius: 30px;
+    background: #f3f0ff;
+}
+
+.search input {
+    padding: 8px 15px;
+    border-radius: 30px;
+    width: 200px;
+}
+
+#exportCsv {
+    background: #b5ead7;
+}
+
+/* Transaction list */
+#transaction-list {
+    list-style: none;
+}
+
+#transaction-list li {
+    background: #fafafa;
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s;
+}
+
+#transaction-list li:hover {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.transaction-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.transaction-info .icon {
+    font-size: 1.4rem;
+    width: 30px;
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: baseline;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.category {
+    font-size: 0.8rem;
+    background: #e0d9ff;
+    padding: 3px 8px;
+    border-radius: 20px;
+    color: #4a3f8a;
+}
+
+.amount {
+    font-weight: 600;
+}
+
+.date {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.delete-btn, .edit-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: background 0.2s;
+}
+
+.delete-btn { color: #e08f8f; }
+.delete-btn:hover { background: #ffe3e3; color: #c56b6b; }
+.edit-btn { color: #8fa8c9; }
+.edit-btn:hover { background: #e3ecff; color: #5a7ca0; }
+
+.empty-message {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    padding: 30px 0;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    .cards { flex-direction: column; }
+    .controls { flex-direction: column; align-items: stretch; }
+    .search input { width: 100%; }
+    #transaction-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        border-radius: 25px;
+    }
+    .transaction-info { width: 100%; }
+    .action-buttons { align-self: flex-end; }
+}
+/* Background image for all pages */
+body {
+    background-image: url('assets/bg-pattern.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-color: #f3f0ff; /* fallback */
+    background-blend-mode: overlay;
+}
+
+/* Auth pages */
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('assets/bg-pattern.png');
+    background-color: #f3f0ff;
+    background-blend-mode: overlay;
+}
+
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #2d2d2d;
+}
+
+.tagline {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background: #c5b4e3;
+    color: white;
+}
+
+.auth-form {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form.active {
+    display: flex;
+}
+
+.auth-form input {
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-form button {
+    padding: 14px;
+    background: #b5ead7;
+    border: none;
+    border-radius: 40px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.auth-form button:hover {
+    background: #a2d8c2;
+}
+
+.auth-message {
+    margin-top: 10px;
+    color: #e08f8f;
+    font-size: 0.9rem;
+}
+
+/* Logout button */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: #f8c8dc;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: #f2b3cf;
+}
