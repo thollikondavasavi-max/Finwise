@@ -12,5 +12,5 @@ A personal finance tracking application.
 ### Dashboard
 ![Dashboard](screenshots/visualization.png)
 
-### Autintecation
-![Reports](screenshots/login.png)
+### Authentication
+![Login Page](screenshots/login.png)
