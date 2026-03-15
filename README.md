@@ -6,11 +6,12 @@ A personal finance tracking application.
 
 ## Screenshots
 
+### Authentication
+![Login Page](screenshots/login.png)
+
 ### Home Page
 ![Home Page](screenshots/home.png)
 
 ### Dashboard
 ![Dashboard](screenshots/visualization.png)
 
-### Authentication
-![Login Page](screenshots/login.png)
